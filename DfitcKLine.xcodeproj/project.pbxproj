@@ -11,6 +11,7 @@
 		E51DB3721F0DD6A5002D9916 /* CBTimeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3711F0DD6A5002D9916 /* CBTimeTopView.m */; };
 		E51DB3751F0DD6ED002D9916 /* CBTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3741F0DD6ED002D9916 /* CBTimeLine.m */; };
 		E51DB3781F0E2817002D9916 /* CBTimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3771F0E2817002D9916 /* CBTimeLineModel.m */; };
+		E51DB37E1F0E51D4002D9916 /* CBContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB37D1F0E51D4002D9916 /* CBContainerView.m */; };
 		E5628CD51F0C8B4900228416 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CD41F0C8B4900228416 /* main.m */; };
 		E5628CD81F0C8B4900228416 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CD71F0C8B4900228416 /* AppDelegate.m */; };
 		E5628CDB1F0C8B4900228416 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CDA1F0C8B4900228416 /* FirstViewController.m */; };
@@ -29,6 +30,9 @@
 		E51DB3741F0DD6ED002D9916 /* CBTimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLine.m; sourceTree = "<group>"; };
 		E51DB3761F0E2817002D9916 /* CBTimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineModel.h; sourceTree = "<group>"; };
 		E51DB3771F0E2817002D9916 /* CBTimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineModel.m; sourceTree = "<group>"; };
+		E51DB37A1F0E4AF7002D9916 /* CBKLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBKLine.h; path = DfitcKLine/CBKLine.h; sourceTree = SOURCE_ROOT; };
+		E51DB37C1F0E51D4002D9916 /* CBContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContainerView.h; sourceTree = "<group>"; };
+		E51DB37D1F0E51D4002D9916 /* CBContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContainerView.m; sourceTree = "<group>"; };
 		E5628CD01F0C8B4900228416 /* DfitcKLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DfitcKLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5628CD41F0C8B4900228416 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5628CD61F0C8B4900228416 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +83,27 @@
 			children = (
 			);
 			name = SegmentView;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E51DB37B1F0E4E63002D9916 /* CBKLine */ = {
+			isa = PBXGroup;
+			children = (
+				E51DB37A1F0E4AF7002D9916 /* CBKLine.h */,
+				E51DB37C1F0E51D4002D9916 /* CBContainerView.h */,
+				E51DB37D1F0E51D4002D9916 /* CBContainerView.m */,
+				E51DB3791F0E3F56002D9916 /* SegmentView */,
+				E5628CED1F0C8DDC00228416 /* Time-sharing plans */,
+				E5628CEE1F0C914E00228416 /* K map */,
+			);
+			path = CBKLine;
+			sourceTree = "<group>";
+		};
+		E51DB37F1F0E6005002D9916 /* TimeLineModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TimeLineModel;
 			sourceTree = "<group>";
 		};
 		E5628CC71F0C8B4900228416 = {
@@ -100,9 +125,7 @@
 		E5628CD21F0C8B4900228416 /* DfitcKLine */ = {
 			isa = PBXGroup;
 			children = (
-				E51DB3791F0E3F56002D9916 /* SegmentView */,
-				E5628CED1F0C8DDC00228416 /* Time-sharing plans */,
-				E5628CEE1F0C914E00228416 /* K map */,
+				E51DB37B1F0E4E63002D9916 /* CBKLine */,
 				E5628CD61F0C8B4900228416 /* AppDelegate.h */,
 				E5628CD71F0C8B4900228416 /* AppDelegate.m */,
 				E5628CD91F0C8B4900228416 /* FirstViewController.h */,
@@ -131,10 +154,12 @@
 			children = (
 				E51DB36A1F0DD59F002D9916 /* CBTime-sharingView.h */,
 				E51DB36B1F0DD59F002D9916 /* CBTime-sharingView.m */,
+				E51DB37F1F0E6005002D9916 /* TimeLineModel */,
 				E51DB36F1F0DD5DB002D9916 /* BottomView */,
 				E51DB36D1F0DD5B9002D9916 /* TopView */,
 			);
 			name = "Time-sharing plans";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E5628CEE1F0C914E00228416 /* K map */ = {
@@ -142,6 +167,7 @@
 			children = (
 			);
 			name = "K map";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +247,7 @@
 				E51DB3781F0E2817002D9916 /* CBTimeLineModel.m in Sources */,
 				E5628CD81F0C8B4900228416 /* AppDelegate.m in Sources */,
 				E51DB3751F0DD6ED002D9916 /* CBTimeLine.m in Sources */,
+				E51DB37E1F0E51D4002D9916 /* CBContainerView.m in Sources */,
 				E51DB3721F0DD6A5002D9916 /* CBTimeTopView.m in Sources */,
 				E51DB36C1F0DD59F002D9916 /* CBTime-sharingView.m in Sources */,
 				E5628CDB1F0C8B4900228416 /* FirstViewController.m in Sources */,
