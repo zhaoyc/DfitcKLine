@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+///分时图的View
+
 @interface CBTime_sharingView : UIView
 
 @end
