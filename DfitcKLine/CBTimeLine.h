@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CBTimeLineTopPositionModel.h"
 
 @interface CBTimeLine : NSObject
+
+/************************用于画分时线的画笔************************/
+
+@property(nonatomic,strong) NSArray *positionModels;
+
+@property(nonatomic,assign) CGFloat horizontalYPosition;
+
+@property(nonatomic,assign) CGFloat timeLineViewWidth;
+
+-(instancetype)initWithContext:(CGContextRef)context;
+
+-(void)draw;
 
 @end

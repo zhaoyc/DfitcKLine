@@ -1,14 +1,14 @@
 //
-//  CBTimeTopView.m
+//  CBLongPressView.m
 //  DfitcKLine
 //
-//  Created by 赵彦超 on 2017/7/6.
+//  Created by 赵彦超 on 2017/7/8.
 //  Copyright © 2017年 Dfitc. All rights reserved.
 //
 
-#import "CBTimeTopView.h"
+#import "CBLongPressView.h"
 
-@implementation CBTimeTopView
+@implementation CBLongPressView
 
 /*
 // Only override drawRect: if you perform custom drawing.

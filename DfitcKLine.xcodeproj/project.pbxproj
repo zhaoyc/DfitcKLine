@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E51DB36C1F0DD59F002D9916 /* CBTime-sharingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB36B1F0DD59F002D9916 /* CBTime-sharingView.m */; };
-		E51DB3721F0DD6A5002D9916 /* CBTimeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3711F0DD6A5002D9916 /* CBTimeTopView.m */; };
 		E51DB3751F0DD6ED002D9916 /* CBTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3741F0DD6ED002D9916 /* CBTimeLine.m */; };
 		E51DB3781F0E2817002D9916 /* CBTimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3771F0E2817002D9916 /* CBTimeLineModel.m */; };
 		E51DB37E1F0E51D4002D9916 /* CBContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB37D1F0E51D4002D9916 /* CBContainerView.m */; };
-		E51DB3821F0F60D9002D9916 /* CBTimeLineGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3811F0F60D9002D9916 /* CBTimeLineGroup.m */; };
 		E51DB39B1F0F67C8002D9916 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3851F0F67C8002D9916 /* MASCompositeConstraint.m */; };
 		E51DB39C1F0F67C8002D9916 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3881F0F67C8002D9916 /* MASConstraint.m */; };
 		E51DB39D1F0F67C8002D9916 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB38A1F0F67C8002D9916 /* MASConstraintMaker.m */; };
@@ -23,6 +20,26 @@
 		E51DB3A21F0F67C8002D9916 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3971F0F67C8002D9916 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		E51DB3A31F0F67C8002D9916 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3991F0F67C8002D9916 /* View+MASAdditions.m */; };
 		E51DB3A61F0F68AB002D9916 /* CBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3A51F0F68AB002D9916 /* CBSegmentView.m */; };
+		E51DB3AD1F1091DC002D9916 /* CBKLineConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3AC1F1091DC002D9916 /* CBKLineConstant.m */; };
+		E51DB3B61F10AB90002D9916 /* CBTimeLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3B51F10AB90002D9916 /* CBTimeLineView.m */; };
+		E51DB3B91F10ABBF002D9916 /* CBTimeLineModelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3B81F10ABBF002D9916 /* CBTimeLineModelGroup.m */; };
+		E51DB3BC1F10C163002D9916 /* CBTimeLineBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3BB1F10C163002D9916 /* CBTimeLineBottomView.m */; };
+		E51DB3BF1F10C1F7002D9916 /* CBTimeLineTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3BE1F10C1F7002D9916 /* CBTimeLineTopView.m */; };
+		E51DB3C21F10C729002D9916 /* CBTimeLineTopPositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3C11F10C729002D9916 /* CBTimeLineTopPositionModel.m */; };
+		E51DB3C61F10CB36002D9916 /* CBLongPressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3C51F10CB36002D9916 /* CBLongPressView.m */; };
+		E51DB3C91F10D193002D9916 /* TimeLine.plist in Resources */ = {isa = PBXBuildFile; fileRef = E51DB3C81F10D193002D9916 /* TimeLine.plist */; };
+		E51DB3CE1F10D57B002D9916 /* JMSGroupTimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3CB1F10D57B002D9916 /* JMSGroupTimeLineModel.m */; };
+		E51DB3CF1F10D57B002D9916 /* JMSTimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3CD1F10D57B002D9916 /* JMSTimeLineModel.m */; };
+		E51DB3E21F10D611002D9916 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3D21F10D611002D9916 /* MJConst.m */; };
+		E51DB3E31F10D611002D9916 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3D51F10D611002D9916 /* MJFoundation.m */; };
+		E51DB3E41F10D611002D9916 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3D71F10D611002D9916 /* MJProperty.m */; };
+		E51DB3E51F10D611002D9916 /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3D91F10D611002D9916 /* MJType.m */; };
+		E51DB3E61F10D611002D9916 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3DB1F10D611002D9916 /* NSObject+MJCoding.m */; };
+		E51DB3E71F10D611002D9916 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3DD1F10D611002D9916 /* NSObject+MJKeyValue.m */; };
+		E51DB3E81F10D611002D9916 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3DF1F10D611002D9916 /* NSObject+MJProperty.m */; };
+		E51DB3E91F10D611002D9916 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3E11F10D611002D9916 /* NSString+MJExtension.m */; };
+		E51DB3EC1F10F03A002D9916 /* CBTimeLineBottomVolum.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3EB1F10F03A002D9916 /* CBTimeLineBottomVolum.m */; };
+		E51DB3EF1F10F058002D9916 /* CBTimeLineBottomPositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3EE1F10F058002D9916 /* CBTimeLineBottomPositionModel.m */; };
 		E5628CD51F0C8B4900228416 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CD41F0C8B4900228416 /* main.m */; };
 		E5628CD81F0C8B4900228416 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CD71F0C8B4900228416 /* AppDelegate.m */; };
 		E5628CDB1F0C8B4900228416 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CDA1F0C8B4900228416 /* FirstViewController.m */; };
@@ -33,10 +50,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E51DB36A1F0DD59F002D9916 /* CBTime-sharingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBTime-sharingView.h"; sourceTree = "<group>"; };
-		E51DB36B1F0DD59F002D9916 /* CBTime-sharingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBTime-sharingView.m"; sourceTree = "<group>"; };
-		E51DB3701F0DD6A5002D9916 /* CBTimeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeTopView.h; sourceTree = "<group>"; };
-		E51DB3711F0DD6A5002D9916 /* CBTimeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeTopView.m; sourceTree = "<group>"; };
 		E51DB3731F0DD6ED002D9916 /* CBTimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLine.h; sourceTree = "<group>"; };
 		E51DB3741F0DD6ED002D9916 /* CBTimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLine.m; sourceTree = "<group>"; };
 		E51DB3761F0E2817002D9916 /* CBTimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineModel.h; sourceTree = "<group>"; };
@@ -44,8 +57,6 @@
 		E51DB37A1F0E4AF7002D9916 /* CBKLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBKLine.h; path = DfitcKLine/CBKLine.h; sourceTree = SOURCE_ROOT; };
 		E51DB37C1F0E51D4002D9916 /* CBContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContainerView.h; sourceTree = "<group>"; };
 		E51DB37D1F0E51D4002D9916 /* CBContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContainerView.m; sourceTree = "<group>"; };
-		E51DB3801F0F60D9002D9916 /* CBTimeLineGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineGroup.h; sourceTree = "<group>"; };
-		E51DB3811F0F60D9002D9916 /* CBTimeLineGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineGroup.m; sourceTree = "<group>"; };
 		E51DB3841F0F67C8002D9916 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		E51DB3851F0F67C8002D9916 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		E51DB3861F0F67C8002D9916 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -71,6 +82,46 @@
 		E51DB39A1F0F67C8002D9916 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		E51DB3A41F0F68AB002D9916 /* CBSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSegmentView.h; sourceTree = "<group>"; };
 		E51DB3A51F0F68AB002D9916 /* CBSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSegmentView.m; sourceTree = "<group>"; };
+		E51DB3AB1F1091DC002D9916 /* CBKLineConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBKLineConstant.h; sourceTree = "<group>"; };
+		E51DB3AC1F1091DC002D9916 /* CBKLineConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBKLineConstant.m; sourceTree = "<group>"; };
+		E51DB3B41F10AB90002D9916 /* CBTimeLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineView.h; sourceTree = "<group>"; };
+		E51DB3B51F10AB90002D9916 /* CBTimeLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineView.m; sourceTree = "<group>"; };
+		E51DB3B71F10ABBF002D9916 /* CBTimeLineModelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineModelGroup.h; sourceTree = "<group>"; };
+		E51DB3B81F10ABBF002D9916 /* CBTimeLineModelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineModelGroup.m; sourceTree = "<group>"; };
+		E51DB3BA1F10C163002D9916 /* CBTimeLineBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineBottomView.h; sourceTree = "<group>"; };
+		E51DB3BB1F10C163002D9916 /* CBTimeLineBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineBottomView.m; sourceTree = "<group>"; };
+		E51DB3BD1F10C1F7002D9916 /* CBTimeLineTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineTopView.h; sourceTree = "<group>"; };
+		E51DB3BE1F10C1F7002D9916 /* CBTimeLineTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineTopView.m; sourceTree = "<group>"; };
+		E51DB3C01F10C729002D9916 /* CBTimeLineTopPositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineTopPositionModel.h; sourceTree = "<group>"; };
+		E51DB3C11F10C729002D9916 /* CBTimeLineTopPositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineTopPositionModel.m; sourceTree = "<group>"; };
+		E51DB3C41F10CB36002D9916 /* CBLongPressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLongPressView.h; sourceTree = "<group>"; };
+		E51DB3C51F10CB36002D9916 /* CBLongPressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLongPressView.m; sourceTree = "<group>"; };
+		E51DB3C81F10D193002D9916 /* TimeLine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TimeLine.plist; sourceTree = "<group>"; };
+		E51DB3CA1F10D57B002D9916 /* JMSGroupTimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSGroupTimeLineModel.h; sourceTree = "<group>"; };
+		E51DB3CB1F10D57B002D9916 /* JMSGroupTimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSGroupTimeLineModel.m; sourceTree = "<group>"; };
+		E51DB3CC1F10D57B002D9916 /* JMSTimeLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSTimeLineModel.h; sourceTree = "<group>"; };
+		E51DB3CD1F10D57B002D9916 /* JMSTimeLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSTimeLineModel.m; sourceTree = "<group>"; };
+		E51DB3D11F10D611002D9916 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
+		E51DB3D21F10D611002D9916 /* MJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJConst.m; sourceTree = "<group>"; };
+		E51DB3D31F10D611002D9916 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		E51DB3D41F10D611002D9916 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		E51DB3D51F10D611002D9916 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		E51DB3D61F10D611002D9916 /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		E51DB3D71F10D611002D9916 /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		E51DB3D81F10D611002D9916 /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		E51DB3D91F10D611002D9916 /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		E51DB3DA1F10D611002D9916 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		E51DB3DB1F10D611002D9916 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		E51DB3DC1F10D611002D9916 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		E51DB3DD1F10D611002D9916 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		E51DB3DE1F10D611002D9916 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		E51DB3DF1F10D611002D9916 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		E51DB3E01F10D611002D9916 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		E51DB3E11F10D611002D9916 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		E51DB3EA1F10F03A002D9916 /* CBTimeLineBottomVolum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineBottomVolum.h; sourceTree = "<group>"; };
+		E51DB3EB1F10F03A002D9916 /* CBTimeLineBottomVolum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineBottomVolum.m; sourceTree = "<group>"; };
+		E51DB3ED1F10F058002D9916 /* CBTimeLineBottomPositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineBottomPositionModel.h; sourceTree = "<group>"; };
+		E51DB3EE1F10F058002D9916 /* CBTimeLineBottomPositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineBottomPositionModel.m; sourceTree = "<group>"; };
 		E5628CD01F0C8B4900228416 /* DfitcKLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DfitcKLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5628CD41F0C8B4900228416 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5628CD61F0C8B4900228416 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,14 +150,12 @@
 		E51DB36D1F0DD5B9002D9916 /* TopView */ = {
 			isa = PBXGroup;
 			children = (
-				E51DB3701F0DD6A5002D9916 /* CBTimeTopView.h */,
-				E51DB3711F0DD6A5002D9916 /* CBTimeTopView.m */,
 				E51DB3731F0DD6ED002D9916 /* CBTimeLine.h */,
 				E51DB3741F0DD6ED002D9916 /* CBTimeLine.m */,
-				E51DB3761F0E2817002D9916 /* CBTimeLineModel.h */,
-				E51DB3771F0E2817002D9916 /* CBTimeLineModel.m */,
-				E51DB3801F0F60D9002D9916 /* CBTimeLineGroup.h */,
-				E51DB3811F0F60D9002D9916 /* CBTimeLineGroup.m */,
+				E51DB3BD1F10C1F7002D9916 /* CBTimeLineTopView.h */,
+				E51DB3BE1F10C1F7002D9916 /* CBTimeLineTopView.m */,
+				E51DB3C01F10C729002D9916 /* CBTimeLineTopPositionModel.h */,
+				E51DB3C11F10C729002D9916 /* CBTimeLineTopPositionModel.m */,
 			);
 			name = TopView;
 			sourceTree = "<group>";
@@ -114,6 +163,12 @@
 		E51DB36F1F0DD5DB002D9916 /* BottomView */ = {
 			isa = PBXGroup;
 			children = (
+				E51DB3BA1F10C163002D9916 /* CBTimeLineBottomView.h */,
+				E51DB3BB1F10C163002D9916 /* CBTimeLineBottomView.m */,
+				E51DB3EA1F10F03A002D9916 /* CBTimeLineBottomVolum.h */,
+				E51DB3EB1F10F03A002D9916 /* CBTimeLineBottomVolum.m */,
+				E51DB3ED1F10F058002D9916 /* CBTimeLineBottomPositionModel.h */,
+				E51DB3EE1F10F058002D9916 /* CBTimeLineBottomPositionModel.m */,
 			);
 			name = BottomView;
 			sourceTree = "<group>";
@@ -131,11 +186,14 @@
 		E51DB37B1F0E4E63002D9916 /* CBKLine */ = {
 			isa = PBXGroup;
 			children = (
+				E51DB3C71F10D187002D9916 /* DataFiles */,
 				E51DB37A1F0E4AF7002D9916 /* CBKLine.h */,
 				E51DB37C1F0E51D4002D9916 /* CBContainerView.h */,
 				E51DB37D1F0E51D4002D9916 /* CBContainerView.m */,
+				E51DB3C31F10C805002D9916 /* LonePressView */,
+				E51DB3A71F108EA5002D9916 /* constant */,
 				E51DB3791F0E3F56002D9916 /* SegmentView */,
-				E5628CED1F0C8DDC00228416 /* Time-sharing plans */,
+				E5628CED1F0C8DDC00228416 /* TimeLineView */,
 				E5628CEE1F0C914E00228416 /* K map */,
 			);
 			path = CBKLine;
@@ -144,6 +202,14 @@
 		E51DB37F1F0E6005002D9916 /* TimeLineModel */ = {
 			isa = PBXGroup;
 			children = (
+				E51DB3CA1F10D57B002D9916 /* JMSGroupTimeLineModel.h */,
+				E51DB3CB1F10D57B002D9916 /* JMSGroupTimeLineModel.m */,
+				E51DB3CC1F10D57B002D9916 /* JMSTimeLineModel.h */,
+				E51DB3CD1F10D57B002D9916 /* JMSTimeLineModel.m */,
+				E51DB3761F0E2817002D9916 /* CBTimeLineModel.h */,
+				E51DB3771F0E2817002D9916 /* CBTimeLineModel.m */,
+				E51DB3B71F10ABBF002D9916 /* CBTimeLineModelGroup.h */,
+				E51DB3B81F10ABBF002D9916 /* CBTimeLineModelGroup.m */,
 			);
 			name = TimeLineModel;
 			sourceTree = "<group>";
@@ -178,9 +244,60 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		E51DB3A71F108EA5002D9916 /* constant */ = {
+			isa = PBXGroup;
+			children = (
+				E51DB3AB1F1091DC002D9916 /* CBKLineConstant.h */,
+				E51DB3AC1F1091DC002D9916 /* CBKLineConstant.m */,
+			);
+			name = constant;
+			sourceTree = "<group>";
+		};
+		E51DB3C31F10C805002D9916 /* LonePressView */ = {
+			isa = PBXGroup;
+			children = (
+				E51DB3C41F10CB36002D9916 /* CBLongPressView.h */,
+				E51DB3C51F10CB36002D9916 /* CBLongPressView.m */,
+			);
+			name = LonePressView;
+			sourceTree = "<group>";
+		};
+		E51DB3C71F10D187002D9916 /* DataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E51DB3C81F10D193002D9916 /* TimeLine.plist */,
+			);
+			name = DataFiles;
+			sourceTree = "<group>";
+		};
+		E51DB3D01F10D611002D9916 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E51DB3D11F10D611002D9916 /* MJConst.h */,
+				E51DB3D21F10D611002D9916 /* MJConst.m */,
+				E51DB3D31F10D611002D9916 /* MJExtension.h */,
+				E51DB3D41F10D611002D9916 /* MJFoundation.h */,
+				E51DB3D51F10D611002D9916 /* MJFoundation.m */,
+				E51DB3D61F10D611002D9916 /* MJProperty.h */,
+				E51DB3D71F10D611002D9916 /* MJProperty.m */,
+				E51DB3D81F10D611002D9916 /* MJType.h */,
+				E51DB3D91F10D611002D9916 /* MJType.m */,
+				E51DB3DA1F10D611002D9916 /* NSObject+MJCoding.h */,
+				E51DB3DB1F10D611002D9916 /* NSObject+MJCoding.m */,
+				E51DB3DC1F10D611002D9916 /* NSObject+MJKeyValue.h */,
+				E51DB3DD1F10D611002D9916 /* NSObject+MJKeyValue.m */,
+				E51DB3DE1F10D611002D9916 /* NSObject+MJProperty.h */,
+				E51DB3DF1F10D611002D9916 /* NSObject+MJProperty.m */,
+				E51DB3E01F10D611002D9916 /* NSString+MJExtension.h */,
+				E51DB3E11F10D611002D9916 /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
 		E5628CC71F0C8B4900228416 = {
 			isa = PBXGroup;
 			children = (
+				E51DB3D01F10D611002D9916 /* MJExtension */,
 				E51DB3831F0F67C8002D9916 /* Masonry */,
 				E5628CD21F0C8B4900228416 /* DfitcKLine */,
 				E5628CD11F0C8B4900228416 /* Products */,
@@ -222,16 +339,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E5628CED1F0C8DDC00228416 /* Time-sharing plans */ = {
+		E5628CED1F0C8DDC00228416 /* TimeLineView */ = {
 			isa = PBXGroup;
 			children = (
-				E51DB36A1F0DD59F002D9916 /* CBTime-sharingView.h */,
-				E51DB36B1F0DD59F002D9916 /* CBTime-sharingView.m */,
 				E51DB37F1F0E6005002D9916 /* TimeLineModel */,
 				E51DB36F1F0DD5DB002D9916 /* BottomView */,
 				E51DB36D1F0DD5B9002D9916 /* TopView */,
+				E51DB3B41F10AB90002D9916 /* CBTimeLineView.h */,
+				E51DB3B51F10AB90002D9916 /* CBTimeLineView.m */,
 			);
-			name = "Time-sharing plans";
+			name = TimeLineView;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -306,6 +423,7 @@
 				E5628CE61F0C8B4900228416 /* LaunchScreen.storyboard in Resources */,
 				E5628CE31F0C8B4900228416 /* Assets.xcassets in Resources */,
 				E5628CE11F0C8B4900228416 /* Main.storyboard in Resources */,
+				E51DB3C91F10D193002D9916 /* TimeLine.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,22 +435,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51DB3A31F0F67C8002D9916 /* View+MASAdditions.m in Sources */,
+				E51DB3C61F10CB36002D9916 /* CBLongPressView.m in Sources */,
+				E51DB3CE1F10D57B002D9916 /* JMSGroupTimeLineModel.m in Sources */,
 				E5628CDE1F0C8B4900228416 /* SecondViewController.m in Sources */,
 				E51DB3781F0E2817002D9916 /* CBTimeLineModel.m in Sources */,
 				E5628CD81F0C8B4900228416 /* AppDelegate.m in Sources */,
+				E51DB3BF1F10C1F7002D9916 /* CBTimeLineTopView.m in Sources */,
 				E51DB3751F0DD6ED002D9916 /* CBTimeLine.m in Sources */,
+				E51DB3BC1F10C163002D9916 /* CBTimeLineBottomView.m in Sources */,
 				E51DB3A61F0F68AB002D9916 /* CBSegmentView.m in Sources */,
+				E51DB3E41F10D611002D9916 /* MJProperty.m in Sources */,
+				E51DB3B61F10AB90002D9916 /* CBTimeLineView.m in Sources */,
 				E51DB37E1F0E51D4002D9916 /* CBContainerView.m in Sources */,
+				E51DB3E81F10D611002D9916 /* NSObject+MJProperty.m in Sources */,
+				E51DB3E91F10D611002D9916 /* NSString+MJExtension.m in Sources */,
 				E51DB39F1F0F67C8002D9916 /* MASViewAttribute.m in Sources */,
+				E51DB3C21F10C729002D9916 /* CBTimeLineTopPositionModel.m in Sources */,
 				E51DB39B1F0F67C8002D9916 /* MASCompositeConstraint.m in Sources */,
-				E51DB3821F0F60D9002D9916 /* CBTimeLineGroup.m in Sources */,
-				E51DB3721F0DD6A5002D9916 /* CBTimeTopView.m in Sources */,
+				E51DB3EC1F10F03A002D9916 /* CBTimeLineBottomVolum.m in Sources */,
+				E51DB3E71F10D611002D9916 /* NSObject+MJKeyValue.m in Sources */,
+				E51DB3E51F10D611002D9916 /* MJType.m in Sources */,
+				E51DB3EF1F10F058002D9916 /* CBTimeLineBottomPositionModel.m in Sources */,
+				E51DB3E31F10D611002D9916 /* MJFoundation.m in Sources */,
+				E51DB3B91F10ABBF002D9916 /* CBTimeLineModelGroup.m in Sources */,
+				E51DB3E21F10D611002D9916 /* MJConst.m in Sources */,
+				E51DB3AD1F1091DC002D9916 /* CBKLineConstant.m in Sources */,
 				E51DB39D1F0F67C8002D9916 /* MASConstraintMaker.m in Sources */,
+				E51DB3E61F10D611002D9916 /* NSObject+MJCoding.m in Sources */,
 				E51DB39C1F0F67C8002D9916 /* MASConstraint.m in Sources */,
+				E51DB3CF1F10D57B002D9916 /* JMSTimeLineModel.m in Sources */,
 				E51DB3A21F0F67C8002D9916 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				E51DB39E1F0F67C8002D9916 /* MASLayoutConstraint.m in Sources */,
 				E51DB3A11F0F67C8002D9916 /* NSArray+MASAdditions.m in Sources */,
-				E51DB36C1F0DD59F002D9916 /* CBTime-sharingView.m in Sources */,
 				E5628CDB1F0C8B4900228416 /* FirstViewController.m in Sources */,
 				E5628CD51F0C8B4900228416 /* main.m in Sources */,
 				E51DB3A01F0F67C8002D9916 /* MASViewConstraint.m in Sources */,
