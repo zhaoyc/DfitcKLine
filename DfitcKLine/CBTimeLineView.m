@@ -29,6 +29,15 @@
 
 @property(nonatomic,strong) CBLongPressView *timeLineLongPressProfileView;
 
+//时间节点的View
+@property(nonatomic,strong) UIView *timeLabelView;
+
+@property(nonatomic,strong) UILabel *firstTimeLabel;
+
+@property(nonatomic,strong) UILabel *secondTimeLabel;
+
+@property(nonatomic,strong) UILabel *thirdTimeLabel;
+
 
 @end
 
@@ -39,14 +48,16 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.aboveViewRatio = 0.7;
+        self.aboveViewRatio = 0.6;
         self.belowView.backgroundColor = [UIColor blackColor];
+        self.timeLabelView.backgroundColor = [UIColor darkGrayColor];
+
     }
     return self;
 }
 
-#pragma mark set&get方法
-#pragma mark aboveView的get方法
+#pragma mark - setter and getters
+
 -(CBTimeLineTopView *)aboveView
 {
     if (!_aboveView) {
@@ -61,7 +72,6 @@
     return _aboveView;
 }
 
-#pragma mark belowView的get方法
 -(CBTimeLineBottomView *)belowView
 {
     if (!_belowView) {
@@ -70,13 +80,64 @@
         [_belowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.aboveView.mas_bottom);
             make.left.right.equalTo(self.timeLineContainerView);
-            make.height.equalTo(self.timeLineContainerView).multipliedBy(1-self.aboveViewRatio);
+            make.height.equalTo(self.timeLineContainerView).multipliedBy(1-self.aboveViewRatio).with.offset(-HYStockChartTimeLineTimeLabelViewHeight);
         }];
     }
     return _belowView;
 }
 
-#pragma mark timeLineContainerView的get方法
+-(UIView *)timeLabelView
+{
+    if (!_timeLabelView) {
+        _timeLabelView = [UIView new];
+        [self addSubview:_timeLabelView];
+        [_timeLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.mas_bottom);
+            make.width.equalTo(self);
+            make.top.equalTo(self.belowView.mas_bottom);
+        }];
+        NSString *startTime = @"21:00";
+        NSString *middleTime = @"09:00";
+        NSString *endTime = @"15:00";
+        //        //股票数据对应的时间
+        //        startTime = @"09:30";
+        //        middleTime = @"12:45";
+        //        endTime = @"16:00";
+        
+        self.firstTimeLabel = [self private_createTimeLabel];
+        self.firstTimeLabel.text = startTime;
+        [_timeLabelView addSubview:self.firstTimeLabel];
+        self.secondTimeLabel = [self private_createTimeLabel];
+        self.secondTimeLabel.text = middleTime;
+        [_timeLabelView addSubview:self.secondTimeLabel];
+        self.thirdTimeLabel = [self private_createTimeLabel];
+        self.thirdTimeLabel.text = endTime;
+        [_timeLabelView addSubview:self.thirdTimeLabel];
+        [self.firstTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.equalTo(_timeLabelView).offset(5);
+            make.height.equalTo(@(10));
+            make.width.equalTo(@(50));
+        }];
+        [self.secondTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_timeLabelView.mas_centerX);
+            make.top.height.width.equalTo(self.firstTimeLabel);
+        }];
+        self.thirdTimeLabel.textAlignment = NSTextAlignmentRight;
+        [self.thirdTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(_timeLabelView.mas_right).offset(-5);
+            make.top.height.width.equalTo(self.firstTimeLabel);
+        }];
+    }
+    return _timeLabelView;
+}
+-(UILabel *)private_createTimeLabel
+{
+    UILabel *timeLabel = [UILabel new];
+    timeLabel.font = [UIFont systemFontOfSize:11];
+    timeLabel.textColor = [UIColor whiteColor];
+    return timeLabel;
+}
+
 -(UIView *)timeLineContainerView
 {
     if (!_timeLineContainerView) {
@@ -91,7 +152,6 @@
     }
     return _timeLineContainerView;
 }
-
 
 -(CBLongPressView *)timeLineLongPressProfileView
 {

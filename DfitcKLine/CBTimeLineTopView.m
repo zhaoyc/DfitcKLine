@@ -53,11 +53,8 @@
     }
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
-    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+    CGContextSetFillColorWithColor(context, [UIColor orangeColor].CGColor);
     CGContextFillRect(context, rect);
-    
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextFillRect(context, CGRectMake(0, HYStockChartTimeLineAboveViewMaxY, self.frame.size.width, self.frame.size.height-HYStockChartTimeLineAboveViewMaxY));
     
     CBTimeLine *timeLine = [[CBTimeLine alloc] initWithContext:context];
     timeLine.positionModels = [self private_convertTimeLineModlesToPositionModel];
@@ -67,53 +64,8 @@
     [super drawRect:rect];
 }
 
-#pragma mark - get&set方法
--(UIView *)timeLabelView
-{
-    if (!_timeLabelView) {
-        _timeLabelView = [UIView new];
-        [self addSubview:_timeLabelView];
-        [_timeLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.mas_bottom);
-            make.width.left.equalTo(self);
-            make.height.equalTo(@(HYStockChartTimeLineTimeLabelViewHeight));
-        }];
-        NSString *startTime = @"21:00";
-        NSString *middleTime = @"09:00";
-        NSString *endTime = @"15:00";
-        //股票的时间
-        startTime = @"09:30";
-        middleTime = @"12:45";
-        endTime = @"16:00";
+#pragma mark - setter and getter
 
-        self.firstTimeLabel = [self private_createTimeLabel];
-        self.firstTimeLabel.text = startTime;
-        [_timeLabelView addSubview:self.firstTimeLabel];
-        self.secondTimeLabel = [self private_createTimeLabel];
-        self.secondTimeLabel.text = middleTime;
-        [_timeLabelView addSubview:self.secondTimeLabel];
-        self.thirdTimeLabel = [self private_createTimeLabel];
-        self.thirdTimeLabel.text = endTime;
-        [_timeLabelView addSubview:self.thirdTimeLabel];
-        [self.firstTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.equalTo(_timeLabelView).offset(5);
-            make.height.equalTo(@(10));
-            make.width.equalTo(@(50));
-        }];
-        [self.secondTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(_timeLabelView.mas_centerX);
-            make.top.height.width.equalTo(self.firstTimeLabel);
-        }];
-        self.thirdTimeLabel.textAlignment = NSTextAlignmentRight;
-        [self.thirdTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(_timeLabelView.mas_right).offset(-5);
-            make.top.height.width.equalTo(self.firstTimeLabel);
-        }];
-    }
-    return _timeLabelView;
-}
-
-#pragma mark groupModel的set方法
 -(void)setGroupModel:(CBTimeLineModelGroup *)groupModel
 {
     _groupModel = groupModel;
@@ -179,8 +131,8 @@
     return -10;
 }
 
-#pragma mark - 私有方法
-#pragma mark 将HYTimeLineModel转换成对应的position模型
+#pragma mark - private
+//将Model转换成对应的position模型
 -(NSArray *)private_convertTimeLineModlesToPositionModel
 {
     NSAssert(self.timeLineModels, @"timeLineModels不能为空!");
@@ -267,7 +219,6 @@
     return positionArray;
 }
 
-#pragma mark 创建时间的label
 -(UILabel *)private_createTimeLabel
 {
     UILabel *timeLabel = [UILabel new];
@@ -304,20 +255,7 @@
 -(CGFloat)private_oneDayTradeTimes
 {
     return 240;
-//    HYStockType stockType = [HYStockChartGloablVariable stockType];
-//    switch (stockType) {
-//        case HYStockTypeA:
-//            //（9：30-11：30，13：00-15：00）
-//            return 240;
-//            break;
-//        case HYStockTypeUSA:
-//            //（9：30-16：00）
-//            return 390;
-//            break;
-//        default:
-//            return 240;
-//            break;
-//    }
+
 }
 
 @end

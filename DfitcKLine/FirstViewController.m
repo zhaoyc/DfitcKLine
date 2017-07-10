@@ -46,6 +46,7 @@
     self.containerView.backgroundColor = [UIColor blackColor];
     
 }
+#pragma mark - getter
 
 -(CBContainerView *)containerView
 {
@@ -67,7 +68,7 @@
     }
     return _containerView;
 }
-#pragma mark indicatorView的get方法
+
 -(UIActivityIndicatorView *)indicatorView
 {
     if (!_indicatorView) {
@@ -81,8 +82,8 @@
     return _indicatorView;
 }
 
-#pragma mark - set方法
-#pragma mark 设置是否需要全屏的方法
+#pragma mark - setter
+
 -(void)setIsFullScreen:(BOOL)isFullScreen
 {
     _isFullScreen = isFullScreen;
@@ -99,7 +100,7 @@
     }
 }
 
-#pragma mark 分时线数据请求方法
+#pragma mark - loadData
 -(void)event_timeLineRequestMethod
 {
     //加载假分时线数据
@@ -155,15 +156,11 @@
     return nil;
 }
 
-
-#pragma mark - 屏幕旋转相关方法
-#pragma mark 是否支持自动旋转
 -(BOOL)shouldAutorotate
 {
     return NO;
 }
 
-#pragma mark 支持的方向
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationMaskPortrait;

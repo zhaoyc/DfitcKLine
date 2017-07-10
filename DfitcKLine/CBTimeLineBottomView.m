@@ -11,6 +11,7 @@
 #import "CBTimeLineModel.h"
 #import "CBTimeLineBottomPositionModel.h"
 #import "CBTimeLineBottomVolum.h"
+#import "Masonry.h"
 
 @interface CBTimeLineBottomView ()
 
@@ -34,6 +35,11 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetFillColorWithColor(context, [UIColor darkGrayColor].CGColor);
+//    CGContextFillRect(context, CGRectMake(0, HYStockChartTimeLineBelowViewMaxY-HYStockChartTimeLineTimeLabelViewHeight, self.frame.size.width, HYStockChartTimeLineTimeLabelViewHeight));
+
     if (!self.positionModels) {
         return;
     }
@@ -42,8 +48,6 @@
     [timeLineVolumn draw];
 }
 
-
-#pragma mark - 时间
 -(void)drawBelowView
 {
     [self private_convertTimeLineModelsPositionModels];
@@ -51,8 +55,8 @@
     [self setNeedsDisplay];
 }
 
-#pragma mark - 私有方法
-#pragma mark 将分时线的模型数组转换成Y坐标的
+#pragma mark - private method
+
 -(NSArray *)private_convertTimeLineModelsPositionModels
 {
     NSAssert(self.timeLineModels && self.xPositionArray && self.timeLineModels.count == self.xPositionArray.count, @"timeLineModels不能为空!");

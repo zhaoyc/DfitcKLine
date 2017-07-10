@@ -50,8 +50,8 @@
         _segmentView.delegate = self;
         [self addSubview:_segmentView];
         [_segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.equalTo(self);
-            make.width.equalTo(self).multipliedBy(0.9);
+            make.top.equalTo(@64);
+            make.width.equalTo(self);
             make.height.equalTo(@35);
         }];
     }
@@ -65,9 +65,9 @@
         _timeLineView.centerViewType = HYStockChartCenterViewTypeTimeLine;
         [self addSubview:_timeLineView];
         [_timeLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
+            make.width.equalTo(self);
             make.top.equalTo(self.segmentView.mas_bottom);
-            make.bottom.equalTo(self.segmentView.mas_top);
+            make.height.equalTo(self).multipliedBy(0.5);
         }];
     }
     return _timeLineView;
