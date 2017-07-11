@@ -98,16 +98,14 @@
         self.timeLabelView.backgroundColor = [UIColor clearColor];
     }
 }
+#pragma mark - public
 
-#pragma mark - 公有方法
-#pragma mark 画时分线的方法
 -(void)drawAboveView
 {
     NSAssert(self.timeLineModels, @"timeLineModels不能为空!");
     [self setNeedsDisplay];
 }
 
-#pragma mark 长按的时候根据原始的x的位置获得精确的X的位置
 -(CGFloat)getRightXPositionWithOriginXPosition:(CGFloat)originXPosition
 {
     NSAssert(_positionModels, @"位置数组不能为空!");

@@ -81,7 +81,7 @@ extern CGFloat const HYStockChartScaleFactor;
 /**
  *  时分线图的Above上最大的Y
  */
-#define HYStockChartTimeLineAboveViewMaxY (self.frame.size.height-HYStockChartTimeLineTimeLabelViewHeight)
+#define HYStockChartTimeLineAboveViewMaxY (self.frame.size.height)
 
 /**
  *  时分线图的Above上最小的X

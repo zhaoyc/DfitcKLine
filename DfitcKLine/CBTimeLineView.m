@@ -130,13 +130,6 @@
     }
     return _timeLabelView;
 }
--(UILabel *)private_createTimeLabel
-{
-    UILabel *timeLabel = [UILabel new];
-    timeLabel.font = [UIFont systemFontOfSize:11];
-    timeLabel.textColor = [UIColor whiteColor];
-    return timeLabel;
-}
 
 -(UIView *)timeLineContainerView
 {
@@ -167,8 +160,6 @@
     return _timeLineLongPressProfileView;
 }
 
-#pragma mark - 模型设置方法
-#pragma mark aboveViewRatio设置方法
 -(void)setAboveViewRatio:(CGFloat)aboveViewRatio
 {
     _aboveViewRatio = aboveViewRatio;
@@ -180,7 +171,6 @@
     }];
 }
 
-#pragma mark timeLineModels的设置方法
 -(void)setTimeLineGroupModel:(CBTimeLineModelGroup *)timeLineGroupModel
 {
     _timeLineGroupModel = timeLineGroupModel;
@@ -198,22 +188,27 @@
     self.aboveView.centerViewType = centerViewType;
 }
 
-#pragma mark - 私有方法
+#pragma mark - private
+-(UILabel *)private_createTimeLabel
+{
+    UILabel *timeLabel = [UILabel new];
+    timeLabel.font = [UIFont systemFontOfSize:11];
+    timeLabel.textColor = [UIColor whiteColor];
+    return timeLabel;
+}
+
 -(void)addAllEvent
 {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(event_longPressMethod:)];
     [self.timeLineContainerView addGestureRecognizer:longPress];
 }
 
-#pragma mark - 公共方法
-#pragma mark 重绘
+#pragma mark - public
 -(void)reDraw
 {
     [self.aboveView drawAboveView];
 }
 
-#pragma mark - Event执行方法
-#pragma mark 长按执行方法
 -(void)event_longPressMethod:(UILongPressGestureRecognizer *)longPress
 {
     CGPoint pressPosition = [longPress locationInView:self.aboveView];
@@ -245,7 +240,7 @@
     }
 }
 
-#pragma mark - HYTimeLineAboveViewDelegate代理方法
+#pragma mark - HYTimeLineAboveViewDelegate
 -(void)timeLineAboveView:(UIView *)timeLineAboveView positionModels:(NSArray *)positionModels
 {
     NSMutableArray *xPositionArr = [NSMutableArray array];

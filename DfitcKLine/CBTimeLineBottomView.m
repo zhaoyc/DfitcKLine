@@ -36,10 +36,6 @@
 {
     [super drawRect:rect];
 
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetFillColorWithColor(context, [UIColor darkGrayColor].CGColor);
-//    CGContextFillRect(context, CGRectMake(0, HYStockChartTimeLineBelowViewMaxY-HYStockChartTimeLineTimeLabelViewHeight, self.frame.size.width, HYStockChartTimeLineTimeLabelViewHeight));
-
     if (!self.positionModels) {
         return;
     }

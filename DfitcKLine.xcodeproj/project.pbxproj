@@ -40,6 +40,7 @@
 		E51DB3E91F10D611002D9916 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3E11F10D611002D9916 /* NSString+MJExtension.m */; };
 		E51DB3EC1F10F03A002D9916 /* CBTimeLineBottomVolum.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3EB1F10F03A002D9916 /* CBTimeLineBottomVolum.m */; };
 		E51DB3EF1F10F058002D9916 /* CBTimeLineBottomPositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3EE1F10F058002D9916 /* CBTimeLineBottomPositionModel.m */; };
+		E51DB3F31F147754002D9916 /* CBCoordinatesControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E51DB3F21F147754002D9916 /* CBCoordinatesControl.m */; };
 		E5628CD51F0C8B4900228416 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CD41F0C8B4900228416 /* main.m */; };
 		E5628CD81F0C8B4900228416 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CD71F0C8B4900228416 /* AppDelegate.m */; };
 		E5628CDB1F0C8B4900228416 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5628CDA1F0C8B4900228416 /* FirstViewController.m */; };
@@ -122,6 +123,8 @@
 		E51DB3EB1F10F03A002D9916 /* CBTimeLineBottomVolum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineBottomVolum.m; sourceTree = "<group>"; };
 		E51DB3ED1F10F058002D9916 /* CBTimeLineBottomPositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTimeLineBottomPositionModel.h; sourceTree = "<group>"; };
 		E51DB3EE1F10F058002D9916 /* CBTimeLineBottomPositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTimeLineBottomPositionModel.m; sourceTree = "<group>"; };
+		E51DB3F11F147754002D9916 /* CBCoordinatesControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCoordinatesControl.h; sourceTree = "<group>"; };
+		E51DB3F21F147754002D9916 /* CBCoordinatesControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCoordinatesControl.m; sourceTree = "<group>"; };
 		E5628CD01F0C8B4900228416 /* DfitcKLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DfitcKLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5628CD41F0C8B4900228416 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5628CD61F0C8B4900228416 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -294,6 +297,15 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		E51DB3F01F146B9F002D9916 /* Coordinates stuff */ = {
+			isa = PBXGroup;
+			children = (
+				E51DB3F11F147754002D9916 /* CBCoordinatesControl.h */,
+				E51DB3F21F147754002D9916 /* CBCoordinatesControl.m */,
+			);
+			name = "Coordinates stuff";
+			sourceTree = "<group>";
+		};
 		E5628CC71F0C8B4900228416 = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +354,7 @@
 		E5628CED1F0C8DDC00228416 /* TimeLineView */ = {
 			isa = PBXGroup;
 			children = (
+				E51DB3F01F146B9F002D9916 /* Coordinates stuff */,
 				E51DB37F1F0E6005002D9916 /* TimeLineModel */,
 				E51DB36F1F0DD5DB002D9916 /* BottomView */,
 				E51DB36D1F0DD5B9002D9916 /* TopView */,
@@ -460,6 +473,7 @@
 				E51DB3B91F10ABBF002D9916 /* CBTimeLineModelGroup.m in Sources */,
 				E51DB3E21F10D611002D9916 /* MJConst.m in Sources */,
 				E51DB3AD1F1091DC002D9916 /* CBKLineConstant.m in Sources */,
+				E51DB3F31F147754002D9916 /* CBCoordinatesControl.m in Sources */,
 				E51DB39D1F0F67C8002D9916 /* MASConstraintMaker.m in Sources */,
 				E51DB3E61F10D611002D9916 /* NSObject+MJCoding.m in Sources */,
 				E51DB39C1F0F67C8002D9916 /* MASConstraint.m in Sources */,
