@@ -16,6 +16,8 @@
 //
 
 @interface CBCoordinatesControl : NSObject
++(void)cbDrawVLinesContext:(CGContextRef)context InView:(UIView*)view;
+
 
 //top view 的Y坐标轴、参考线、价格和涨跌幅
 +(void)cbDrawYCoordinatesWithPrice:(NSMutableArray*)yPrice
@@ -24,5 +26,9 @@
                             InView:(UIView*)view;
 
 
+//BOTTOM VIEW
++(void)cbDrawBottomViewWithArr:(NSMutableArray*)arr
+                       Context:(CGContextRef)context
+                        InView:(UIView*)view;
 
 @end

@@ -60,9 +60,6 @@
     }
 
     CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextClearRect(context, rect);
-//    CGContextSetFillColorWithColor(context, [UIColor grayColor].CGColor);
-//    CGContextFillRect(context, rect);
     
     CBTimeLine *timeLine = [[CBTimeLine alloc] initWithContext:context];
     timeLine.positionModels = [self private_convertTimeLineModlesToPositionModel];
@@ -70,6 +67,7 @@
     timeLine.timeLineViewWidth = self.frame.size.width;
     [timeLine draw];
 
+    [CBCoordinatesControl cbDrawVLinesContext:context InView:self];
     [super drawRect:rect];
 }
 
@@ -285,11 +283,26 @@
         [self.yPriceArr insertObject:[NSString stringWithFormat:@"%.f",baseP - (maxP - baseP)/2.0] atIndex:0];
         [self.yPriceArr insertObject:[NSString stringWithFormat:@"%.f",baseP - (maxP - baseP)] atIndex:0];
         
+        [self.yPriceArr removeAllObjects];
+        [self.yPriceArr addObject:@"2712"];
+        [self.yPriceArr addObject:@"2698"];
+        [self.yPriceArr addObject:@"2674"];
+        [self.yPriceArr addObject:@"2656"];
+        [self.yPriceArr addObject:@"2636"];
+        
         [self.yPercentArr addObject:[NSString stringWithFormat:@"+%.2f%%",(baseP-maxP)/baseP]];
         [self.yPercentArr addObject:[NSString stringWithFormat:@"+%.2f%%",(baseP-maxP)/baseP/2.0]];
         [self.yPercentArr addObject:[NSString stringWithFormat:@"0.00%%"]];
         [self.yPercentArr addObject:[NSString stringWithFormat:@"-%.2f%%",(baseP-maxP)/baseP/2.0]];
         [self.yPercentArr addObject:[NSString stringWithFormat:@"-%.2f%%",(baseP-maxP)/baseP]];
+        
+        [self.yPercentArr removeAllObjects];
+        [self.yPercentArr addObject:@"+0.12%"];
+        [self.yPercentArr addObject:@"+0.06%"];
+        [self.yPercentArr addObject:@"0.00%"];
+        [self.yPercentArr addObject:@"-0.06%"];
+        [self.yPercentArr addObject:@"-0.12%"];
+
     }
 }
 

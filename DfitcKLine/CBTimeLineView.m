@@ -51,8 +51,7 @@
         self.aboveViewRatio = 0.6;
         self.aboveView.backgroundColor = [UIColor blackColor];
         self.belowView.backgroundColor = [UIColor blackColor];
-        self.timeLabelView.backgroundColor = [UIColor darkGrayColor];
-
+        self.timeLabelView.backgroundColor = [UIColor blackColor];
     }
     return self;
 }

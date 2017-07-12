@@ -12,10 +12,13 @@
 #import "CBTimeLineBottomPositionModel.h"
 #import "CBTimeLineBottomVolum.h"
 #import "Masonry.h"
+#import "CBCoordinatesControl.h"
 
 @interface CBTimeLineBottomView ()
 
 @property(nonatomic,strong) NSArray *positionModels;
+
+@property(nonatomic,strong) NSMutableArray* countArr;
 
 @end
 
@@ -27,6 +30,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         _positionModels = nil;
+        self.countArr = [NSMutableArray new];
+        NSMutableDictionary *dic1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"2.98万 CJL",@"LEFT",@"4566",@"RIGHT", nil];
+        NSMutableDictionary *dic2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1.78万",@"LEFT",@"4524",@"RIGHT", nil];
+        [self.countArr addObject:dic1];
+        [self.countArr addObject:dic2];
+
     }
     return self;
 }
@@ -42,6 +51,9 @@
     CBTimeLineBottomVolum *timeLineVolumn = [[CBTimeLineBottomVolum alloc] initWithContext:UIGraphicsGetCurrentContext()];
     timeLineVolumn.timeLineVolumnPositionModels = self.positionModels;
     [timeLineVolumn draw];
+    
+    [CBCoordinatesControl cbDrawBottomViewWithArr:self.countArr Context:UIGraphicsGetCurrentContext() InView:self];
+    [CBCoordinatesControl cbDrawVLinesContext:UIGraphicsGetCurrentContext() InView:self];
 }
 
 -(void)drawBelowView
@@ -74,7 +86,7 @@
     }];
     CGFloat minY = HYStockChartTimeLineBelowViewMinY;
     CGFloat maxY = HYStockChartTimeLineBelowViewMaxY;
-    CGFloat yUnitValue = (maxVolume - minVolume)/(maxY-minY);
+    CGFloat yUnitValue = (maxVolume - minVolume)/(maxY-20-minY);
     
     NSMutableArray *positionArray = [NSMutableArray array];
     

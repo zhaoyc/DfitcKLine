@@ -47,7 +47,6 @@
         }
         CGContextStrokePath(self.context);
     }
-
 }
 
 @end

@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.containerView.backgroundColor = [UIColor blackColor];
+    self.containerView.backgroundColor = [UIColor whiteColor];
     
 }
 #pragma mark - getter
