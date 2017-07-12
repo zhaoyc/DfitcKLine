@@ -49,6 +49,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.aboveViewRatio = 0.6;
+        self.aboveView.backgroundColor = [UIColor blackColor];
         self.belowView.backgroundColor = [UIColor blackColor];
         self.timeLabelView.backgroundColor = [UIColor darkGrayColor];
 
@@ -135,7 +136,7 @@
 {
     if (!_timeLineContainerView) {
         _timeLineContainerView = [UIView new];
-        [self addAllEvent];
+//        [self addAllEvent];
         [self addSubview:_timeLineContainerView];
         [_timeLineContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self);

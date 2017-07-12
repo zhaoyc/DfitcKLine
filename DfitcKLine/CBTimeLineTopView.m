@@ -14,6 +14,7 @@
 #import "CBTimeLineModelGroup.h"
 #import "Masonry.h"
 #import "MJExtension.h"
+#import "CBCoordinatesControl.h"
 
 @interface CBTimeLineTopView ()
 
@@ -30,6 +31,12 @@
 @property(nonatomic,strong) UILabel *secondTimeLabel;
 
 @property(nonatomic,strong) UILabel *thirdTimeLabel;
+
+@property(nonatomic,strong) NSMutableArray *yPriceArr;
+
+@property(nonatomic,strong) NSMutableArray *yPercentArr;
+
+@property(nonatomic,strong) NSMutableArray *yPositionArr;
 
 @end
 
@@ -51,16 +58,18 @@
     if (!self.timeLineModels) {
         return;
     }
+
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextClearRect(context, rect);
-    CGContextSetFillColorWithColor(context, [UIColor orangeColor].CGColor);
-    CGContextFillRect(context, rect);
+//    CGContextClearRect(context, rect);
+//    CGContextSetFillColorWithColor(context, [UIColor grayColor].CGColor);
+//    CGContextFillRect(context, rect);
     
     CBTimeLine *timeLine = [[CBTimeLine alloc] initWithContext:context];
     timeLine.positionModels = [self private_convertTimeLineModlesToPositionModel];
     timeLine.horizontalYPosition = self.horizontalViewYPosition;
     timeLine.timeLineViewWidth = self.frame.size.width;
     [timeLine draw];
+
     [super drawRect:rect];
 }
 
@@ -138,6 +147,8 @@
     CBTimeLineModel *firstModel = [self.timeLineModels firstObject];
     __block CGFloat minPrice = firstModel.currentPrice;
     __block CGFloat maxPrice = firstModel.currentPrice;
+    __block CGFloat centerPointPrice = firstModel.currentPrice;
+    
     [self.timeLineModels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         CBTimeLineModel *timeLineModel = (CBTimeLineModel *)obj;
         if (timeLineModel.currentPrice < minPrice) {
@@ -149,25 +160,30 @@
     }];
     CGFloat minY = HYStockChartTimeLineAboveViewMinY;
     CGFloat maxY = HYStockChartTimeLineAboveViewMaxY;
-    CGFloat yUnitValue = (maxPrice - minPrice)/(maxY-minY);
     
-    self.horizontalViewYPosition = (self.groupModel.lastDayEndPrice-minPrice)/yUnitValue;
+    CGFloat yUnitValue;
+    CGFloat yMaxPriceRange;
+    if (fabs(centerPointPrice-maxPrice)>fabs(centerPointPrice-minPrice)) {
+        
+        yMaxPriceRange = fabs(centerPointPrice-maxPrice)*2;
+        yUnitValue = yMaxPriceRange/(maxY-minY);
+        [self yPriceArrWithBasePrice:centerPointPrice maxPrice:maxPrice rise:YES];
+        
+    }else{
+        yMaxPriceRange = fabs(centerPointPrice-minPrice)*2;
+        yUnitValue = yMaxPriceRange/(maxY-minY);
+        [self yPriceArrWithBasePrice:centerPointPrice maxPrice:minPrice rise:NO];
+    }
     
+    [CBCoordinatesControl cbDrawYCoordinatesWithPrice:self.yPriceArr Percent:self.yPercentArr Context:UIGraphicsGetCurrentContext() InView:self];
+    
+    self.horizontalViewYPosition = maxY/2.0;
+    NSLog(@"self.timeLineModels.count = %lu",(unsigned long)[self.timeLineModels count]);
     //2.算出x轴的单元值
     CGFloat xUnitValue = [self private_getXAxisUnitValue];
     
-    //转换成posisiton的模型，为了不多遍历一次数组，在这里顺便把折线情况下的日期也设置一下
     NSMutableArray *positionArray = [NSMutableArray array];
     NSInteger index = 0;
-    
-    //设置一下时间
-    if (self.centerViewType == HYStockChartCenterViewTypeBrokenLine) {
-        self.firstTimeLabel.text = [firstModel.currentDate substringToIndex:5];
-        CBTimeLineModel *middleModel = [self.timeLineModels objectAtIndex:self.timeLineModels.count/2];
-        self.secondTimeLabel.text = [middleModel.currentDate substringToIndex:5];
-        CBTimeLineModel *lastModel = [self.timeLineModels lastObject];
-        self.thirdTimeLabel.text = [lastModel.currentDate substringToIndex:5];
-    }
     
     CGFloat oldXPosition = -1;
     for (CBTimeLineModel *timeLineModel in self.timeLineModels) {
@@ -185,22 +201,11 @@
                     oldXPosition = xPosition;
                 }
                 yPosition = (maxY - (timeLineModel.currentPrice - minPrice)/yUnitValue);
+                yPosition = maxY - (timeLineModel.currentPrice - (centerPointPrice-yMaxPriceRange/2.0))/yUnitValue;
             }
                 break;
-            case HYStockChartCenterViewTypeBrokenLine:
-            {
-                if (oldXPosition < 0) {
-                    oldXPosition = HYStockChartTimeLineAboveViewMinX;
-                    xPosition = oldXPosition;
-                }else{
-                    //5日线每10分钟取一次
-                    xPosition = oldXPosition + 10*xUnitValue;
-                    oldXPosition = xPosition;
-                }
-                yPosition = (maxY - (timeLineModel.currentPrice - minPrice)/yUnitValue);
-            }
+            default:
                 break;
-            default:break;
         }
         index++;
         NSAssert(!isnan(xPosition)&&!isnan(yPosition), @"x或y出现NAN值!");
@@ -248,12 +253,49 @@
     }
 }
 
-
-#pragma mark 一天的交易总时间，单位是分钟
 -(CGFloat)private_oneDayTradeTimes
 {
     return 240;
+}
 
+-(void)yPriceArrWithBasePrice:(CGFloat)baseP maxPrice:(CGFloat)maxP rise:(BOOL)rise{
+
+    self.yPriceArr = [NSMutableArray new];
+    self.yPercentArr = [NSMutableArray new];
+    
+    //y最大偏移量是涨还是跌
+    if (rise) {
+        [self.yPriceArr addObject:[NSString stringWithFormat:@"%.f",maxP]];
+        [self.yPriceArr addObject:[NSString stringWithFormat:@"%.f",baseP + (maxP - baseP)/2.0]];
+        [self.yPriceArr addObject:[NSString stringWithFormat:@"%.f",baseP]];
+        [self.yPriceArr addObject:[NSString stringWithFormat:@"%.f",baseP - (maxP - baseP)/2.0]];
+        [self.yPriceArr addObject:[NSString stringWithFormat:@"%.f",baseP - maxP +baseP]];
+        
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"+%.2f%%",(maxP-baseP)/baseP]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"+%.2f%%",(maxP-baseP)/baseP/2.0]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"0.00%%"]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"-%.2f%%",(maxP-baseP)/baseP/2.0]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"-%.2f%%",(maxP-baseP)/baseP]];
+
+    }else{
+    
+        [self.yPriceArr addObject:[NSString stringWithFormat:@"%.f",maxP]];
+        [self.yPriceArr insertObject:[NSString stringWithFormat:@"%.f",baseP + (maxP - baseP)/2.0] atIndex:0];
+        [self.yPriceArr insertObject:[NSString stringWithFormat:@"%.f",baseP] atIndex:0];
+        [self.yPriceArr insertObject:[NSString stringWithFormat:@"%.f",baseP - (maxP - baseP)/2.0] atIndex:0];
+        [self.yPriceArr insertObject:[NSString stringWithFormat:@"%.f",baseP - (maxP - baseP)] atIndex:0];
+        
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"+%.2f%%",(baseP-maxP)/baseP]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"+%.2f%%",(baseP-maxP)/baseP/2.0]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"0.00%%"]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"-%.2f%%",(baseP-maxP)/baseP/2.0]];
+        [self.yPercentArr addObject:[NSString stringWithFormat:@"-%.2f%%",(baseP-maxP)/baseP]];
+    }
+}
+
+-(void)drawAtPoint:(CGPoint)point withStr:(NSString *)str
+{
+    [str drawAtPoint:point withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:9], NSStrokeColorAttributeName:[UIColor orangeColor]}];
 }
 
 @end

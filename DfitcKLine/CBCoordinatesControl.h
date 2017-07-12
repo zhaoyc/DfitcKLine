@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /** 绘制坐标轴、参考线、坐标单位*/
 
@@ -15,6 +16,13 @@
 //
 
 @interface CBCoordinatesControl : NSObject
+
+//top view 的Y坐标轴、参考线、价格和涨跌幅
++(void)cbDrawYCoordinatesWithPrice:(NSMutableArray*)yPrice
+                           Percent:(NSMutableArray*)yPercent
+                           Context:(CGContextRef)context
+                            InView:(UIView*)view;
+
 
 
 @end

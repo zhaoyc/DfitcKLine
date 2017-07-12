@@ -25,12 +25,6 @@
 
 @property(nonatomic,strong) NSArray *fiveDaysModels;    //5日线的模型数组
 
-//@property(nonatomic,strong) JMSKLineGroupModel *dayKLineGroupModel;//日K线groupModel
-//
-//@property(nonatomic,strong) JMSKLineGroupModel *weekKLineGroupModle;   //周K线的groupModel
-//
-//@property(nonatomic,strong) JMSKLineGroupModel *monthKLineGroupModle;   //月K线的groupModel
-
 @property(nonatomic,assign) NSInteger dayKlineTotalMonthAgo;
 
 @property(nonatomic,strong) UIButton *refreshBtn;

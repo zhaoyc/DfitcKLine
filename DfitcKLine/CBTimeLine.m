@@ -47,16 +47,7 @@
         }
         CGContextStrokePath(self.context);
     }
-    //画中间那根横线
-    CGContextSetStrokeColorWithColor(self.context, [UIColor whiteColor].CGColor);
-    const CGFloat lengths[] = {1,3};
-    CGContextSetLineDash(self.context, 0, lengths, 2);
-    if (isnumber(self.horizontalYPosition)) {
-        CGContextMoveToPoint(self.context, 0, self.horizontalYPosition);
-        CGContextAddLineToPoint(self.context, self.timeLineViewWidth, self.horizontalYPosition);
-        CGContextStrokePath(self.context);
-    }
-}
 
+}
 
 @end
