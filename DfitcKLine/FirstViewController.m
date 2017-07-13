@@ -13,7 +13,7 @@
 #import "JMSTimeLineModel.h"
 #import "JMSGroupTimeLineModel.h"
 
-@interface FirstViewController ()<HYStockChartViewDataSource>
+@interface FirstViewController ()<CBKChartViewDataSource>
 
 @property(nonatomic,strong) CBContainerView *containerView;
 
@@ -47,11 +47,11 @@
     if (!_containerView) {
         _containerView = [CBContainerView new];
         _containerView.itemModels = @[
-                                       [HYStockChartViewItemModel itemModelWithTitle:@"分时" type:HYStockChartCenterViewTypeTimeLine],
-                                       [HYStockChartViewItemModel itemModelWithTitle:@"1M" type:HYStockChartCenterViewTypeBrokenLine],
-                                       [HYStockChartViewItemModel itemModelWithTitle:@"5M" type:HYStockChartCenterViewTypeKLine],
-                                       [HYStockChartViewItemModel itemModelWithTitle:@"1H" type:HYStockChartCenterViewTypeKLine],
-                                       [HYStockChartViewItemModel itemModelWithTitle:@"1日" type:HYStockChartCenterViewTypeKLine],
+                                       [CBKChartViewItemModel itemModelWithTitle:@"分时" type:CBKChartViewTypeTimeLine],
+                                       [CBKChartViewItemModel itemModelWithTitle:@"1M" type:CBKChartViewTypeTimeLine],
+                                       [CBKChartViewItemModel itemModelWithTitle:@"5M" type:CBKChartViewTypeKLine],
+                                       [CBKChartViewItemModel itemModelWithTitle:@"1H" type:CBKChartViewTypeKLine],
+                                       [CBKChartViewItemModel itemModelWithTitle:@"1日" type:CBKChartViewTypeKLine],
                                        ];
         _containerView.dataSource = self;
         [self.view addSubview:self.containerView];
@@ -131,18 +131,23 @@
             break;
             
         case 1:
-            //5日线
-
+            //周期线
+            [self.indicatorView stopAnimating];
                 break;
         case 2:
-            //日K线
+            //周期线
+            [self.indicatorView stopAnimating];
 
                 break;
         case 3:
-            //周K线
+            //周期线
+            [self.indicatorView stopAnimating];
+
             break;
         case 4:
-            //月K
+            //周期线
+            [self.indicatorView stopAnimating];
+
             break;
         default:
             break;

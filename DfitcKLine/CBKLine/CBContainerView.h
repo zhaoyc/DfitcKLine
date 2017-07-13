@@ -10,16 +10,16 @@
 #import "CBKLineConstant.h"
 
 /************************ItemModel类************************/
-@interface HYStockChartViewItemModel : NSObject
+@interface CBKChartViewItemModel : NSObject
 
 @property(nonatomic,copy) NSString *title;
-@property(nonatomic,assign) HYStockChartCenterViewType centerViewType;
-+(instancetype)itemModelWithTitle:(NSString *)title type:(HYStockChartCenterViewType)type;
+@property(nonatomic,assign) CBKChartViewType centerViewType;
++(instancetype)itemModelWithTitle:(NSString *)title type:(CBKChartViewType)type;
 
 @end
 
 
-@protocol HYStockChartViewDataSource;
+@protocol CBKChartViewDataSource;
 
 @interface CBContainerView : UIView
 
@@ -28,7 +28,7 @@
 /**
  *  数据源
  */
-@property(nonatomic,weak) id<HYStockChartViewDataSource> dataSource;
+@property(nonatomic,weak) id<CBKChartViewDataSource> dataSource;
 
 /**
  *  选中的索引
@@ -50,7 +50,7 @@
 @end
 
 /************************数据源************************/
-@protocol HYStockChartViewDataSource <NSObject>
+@protocol CBKChartViewDataSource <NSObject>
 
 @required
 /**

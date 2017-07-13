@@ -21,7 +21,7 @@
  */
 @property(nonatomic,strong) CBTimeLineModelGroup *groupModel;
 
-@property(nonatomic,assign) HYStockChartCenterViewType centerViewType;
+@property(nonatomic,assign) CBKChartViewType centerViewType;
 
 @property(nonatomic,weak) id<HYTimeLineAboveViewDelegate> delegate;
 

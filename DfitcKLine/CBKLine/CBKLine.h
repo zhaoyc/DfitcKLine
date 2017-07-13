@@ -13,7 +13,6 @@
 #import "CBContainerView.h"
 #import "CBTimeLineView.h"
 #import "CBTimeLineModel.h"
-//#import "HYStockChartProfileModel.h"
 #import "CBKLineConstant.h"
 
 #endif /* CBKLine_h */

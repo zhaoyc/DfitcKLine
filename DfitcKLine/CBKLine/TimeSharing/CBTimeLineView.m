@@ -80,7 +80,7 @@
         [_belowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.aboveView.mas_bottom);
             make.left.right.equalTo(self.timeLineContainerView);
-            make.height.equalTo(self.timeLineContainerView).multipliedBy(1-self.aboveViewRatio).with.offset(-HYStockChartTimeLineTimeLabelViewHeight);
+            make.height.equalTo(self.timeLineContainerView).multipliedBy(1-self.aboveViewRatio).with.offset(-CBKChartTimeLineTimeLabelViewHeight);
         }];
     }
     return _belowView;
@@ -154,7 +154,7 @@
         [_timeLineLongPressProfileView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.mas_top);
             make.left.right.equalTo(self);
-            make.height.equalTo(@(HYStockChartProfileViewHeight));
+
         }];
     }
     return _timeLineLongPressProfileView;
@@ -182,7 +182,7 @@
     }
 }
 
--(void)setCenterViewType:(HYStockChartCenterViewType)centerViewType
+-(void)setCenterViewType:(CBKChartViewType)centerViewType
 {
     _centerViewType = centerViewType;
     self.aboveView.centerViewType = centerViewType;
@@ -220,7 +220,7 @@
             self.verticalView.backgroundColor = [UIColor whiteColor];
             [self.verticalView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self);
-                make.width.equalTo(@(HYStockChartLongPressVerticalViewWidth));
+                make.width.equalTo(@(CBKChartLongPressVerticalViewWidth));
                 make.height.equalTo(self.mas_height);
                 make.left.equalTo(@-10);
             }];
@@ -253,7 +253,7 @@
 
 -(void)timeLineAboveViewLongPressTimeLineModel:(CBTimeLineModel *)timeLineModel
 {
-    if (self.centerViewType == HYStockChartCenterViewTypeTimeLine) {
+    if (self.centerViewType == CBKChartViewTypeTimeLine) {
         self.timeLineLongPressProfileView.timeLineModel = timeLineModel;
         self.timeLineLongPressProfileView.hidden = NO;
     }else{

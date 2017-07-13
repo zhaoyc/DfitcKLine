@@ -33,7 +33,7 @@
     NSAssert(self.timeLineVolumnPositionModels && self.context, @"timeLineVolumnPositionModels不能为空！");
     CGContextRef context = self.context;
     CGContextSetStrokeColorWithColor(self.context, [UIColor yellowColor].CGColor);
-    CGContextSetLineWidth(self.context, HYStockChartTimeLineVolumeLineWidth);
+    CGContextSetLineWidth(self.context, CBKChartTimeLineVolumeLineWidth);
     for (CBTimeLineBottomPositionModel *positionModel in self.timeLineVolumnPositionModels) {
         //画实体线
         const CGPoint solidPoints[] = {positionModel.startPoint,positionModel.endPoint};

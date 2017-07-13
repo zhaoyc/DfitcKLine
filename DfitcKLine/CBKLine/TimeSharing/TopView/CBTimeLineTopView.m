@@ -156,8 +156,8 @@
             maxPrice = timeLineModel.currentPrice;
         }
     }];
-    CGFloat minY = HYStockChartTimeLineAboveViewMinY;
-    CGFloat maxY = HYStockChartTimeLineAboveViewMaxY;
+    CGFloat minY = CBKChartTimeLineAboveViewMinY;
+    CGFloat maxY = CBKChartTimeLineAboveViewMaxY;
     
     CGFloat yUnitValue;
     CGFloat yMaxPriceRange;
@@ -188,7 +188,7 @@
         CGFloat xPosition = 0;
         CGFloat yPosition = 0;
         switch (self.centerViewType) {
-            case HYStockChartCenterViewTypeTimeLine:
+            case CBKChartViewTypeTimeLine:
             {
                 if (oldXPosition < 0) {
                     oldXPosition = 0;
@@ -232,8 +232,8 @@
 {
     NSTimeInterval oneDayTradeTimes = [self private_oneDayTradeTimes];
     CGFloat xUnitValue = 0;
-    if (self.centerViewType == HYStockChartCenterViewTypeTimeLine) {
-        xUnitValue = (HYStockChartTimeLineAboveViewMaxX-HYStockChartTimeLineAboveViewMinX)/oneDayTradeTimes;
+    if (self.centerViewType == CBKChartViewTypeTimeLine) {
+        xUnitValue = (CBKChartTimeLineAboveViewMaxX-CBKChartTimeLineAboveViewMinX)/oneDayTradeTimes;
         return xUnitValue;
     }else{
         CBTimeLineModel *currentModel = [self.timeLineModels firstObject];
@@ -245,7 +245,7 @@
             }
         }
         NSTimeInterval totalMinutes = days * oneDayTradeTimes;
-        xUnitValue = (HYStockChartTimeLineAboveViewMaxX-HYStockChartTimeLineAboveViewMinX)/totalMinutes;
+        xUnitValue = (CBKChartTimeLineAboveViewMaxX-CBKChartTimeLineAboveViewMinX)/totalMinutes;
         
         return xUnitValue;
     }

@@ -13,7 +13,7 @@
 
 +(void)cbDrawVLinesContext:(CGContextRef)context InView:(UIView*)view{
 
-    CGContextSetLineWidth(context, HYStockChartTimeLineLineWidth);
+    CGContextSetLineWidth(context, CBKChartTimeLineLineWidth);
     CGFloat width = view.frame.size.width;
     CGFloat height = view.frame.size.height;
     
@@ -31,7 +31,7 @@
                             InView:(UIView*)view{
 
     //坐标轴及参考线
-    CGContextSetLineWidth(context, HYStockChartTimeLineLineWidth);
+    CGContextSetLineWidth(context, CBKChartTimeLineLineWidth);
 
     CGFloat height = view.frame.size.height;
     for (int i = 0; i<5; i++) {
@@ -93,7 +93,7 @@
                        Context:(CGContextRef)context
                         InView:(UIView*)view
 {
-    CGContextSetLineWidth(context, HYStockChartTimeLineLineWidth);
+    CGContextSetLineWidth(context, CBKChartTimeLineLineWidth);
     CGFloat height = view.frame.size.height -20;
     
     for (int i = 0; i < [arr count]+1; i ++) {

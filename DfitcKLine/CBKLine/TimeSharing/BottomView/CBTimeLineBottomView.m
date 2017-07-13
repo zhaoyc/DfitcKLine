@@ -84,8 +84,8 @@
             NSLog(@"%ld",timeLineModel.volume);
         }
     }];
-    CGFloat minY = HYStockChartTimeLineBelowViewMinY;
-    CGFloat maxY = HYStockChartTimeLineBelowViewMaxY;
+    CGFloat minY = CBKChartTimeLineBelowViewMinY;
+    CGFloat maxY = CBKChartTimeLineBelowViewMaxY;
     CGFloat yUnitValue = (maxVolume - minVolume)/(maxY-20-minY);
     
     NSMutableArray *positionArray = [NSMutableArray array];

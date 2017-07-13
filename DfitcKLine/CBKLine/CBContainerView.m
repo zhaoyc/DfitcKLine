@@ -25,7 +25,7 @@
 
 //@property(nonatomic,strong) HYKLineView *kLineView;         //K线view
 
-@property(nonatomic,assign) HYStockChartCenterViewType currentCenterViewType;
+@property(nonatomic,assign) CBKChartViewType currentCenterViewType;
 
 @property(nonatomic,assign,readwrite) NSInteger currentIndex;
 
@@ -62,7 +62,7 @@
 {
     if (!_timeLineView) {
         _timeLineView = [CBTimeLineView new];
-        _timeLineView.centerViewType = HYStockChartCenterViewTypeTimeLine;
+        _timeLineView.centerViewType = CBKChartViewTypeTimeLine;
         [self addSubview:_timeLineView];
         [_timeLineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self);
@@ -78,11 +78,11 @@
     _itemModels = itemModels;
     if (itemModels) {
         NSMutableArray *items = [NSMutableArray array];
-        for (HYStockChartViewItemModel *item in itemModels) {
+        for (CBKChartViewItemModel *item in itemModels) {
             [items addObject:item.title];
         }
         self.segmentView.items = items;
-        HYStockChartViewItemModel *firstModel = [itemModels firstObject];
+        CBKChartViewItemModel *firstModel = [itemModels firstObject];
         self.currentCenterViewType = firstModel.centerViewType;
     }
     if (self.dataSource) {
@@ -90,7 +90,7 @@
     }
 }
 
--(void)setDataSource:(id<HYStockChartViewDataSource>)dataSource
+-(void)setDataSource:(id<CBKChartViewDataSource>)dataSource
 {
     _dataSource = dataSource;
     if (self.itemModels) {
@@ -113,32 +113,25 @@
             return;
         }
         
-        HYStockChartViewItemModel *itemModel = self.itemModels[selectedIndex];
-        HYStockChartCenterViewType type = itemModel.centerViewType;
+        CBKChartViewItemModel *itemModel = self.itemModels[selectedIndex];
+        CBKChartViewType type = itemModel.centerViewType;
         if (type != self.currentCenterViewType) {
             //移除原来的view，设置新的view
             self.currentCenterViewType = type;
-            if (type == HYStockChartCenterViewTypeKLine) {
+            if (type == CBKChartViewTypeKLine) {
 //                self.kLineView.hidden = NO;
-//                self.brokenLineView.hidden = YES;
                 self.timeLineView.hidden = YES;
 //                [self bringSubviewToFront:self.kLineView];
-            }else if(HYStockChartCenterViewTypeTimeLine == type){
+            }else if(CBKChartViewTypeTimeLine == type){
                 self.timeLineView.hidden = NO;
 //                self.kLineView.hidden = YES;
-//                self.brokenLineView.hidden = YES;
-            }else{
-//                self.brokenLineView.hidden = NO;
-//                self.kLineView.hidden = YES;
-                self.timeLineView.hidden = YES;
             }
         }
         
-        if (type == HYStockChartCenterViewTypeTimeLine ||
-            HYStockChartCenterViewTypeBrokenLine == type) {
-            NSAssert([stockData isKindOfClass:[CBTimeLineModelGroup class]], @"数据必须是HYTimeLineGroupModel类型!!!");
+        if (type == CBKChartViewTypeTimeLine) {
+            NSAssert([stockData isKindOfClass:[CBTimeLineModelGroup class]], @"数据必须是CBTimeLineModelGroup类型!!!");
             CBTimeLineModelGroup *groupTimeLineModel = (CBTimeLineModelGroup *)stockData;
-            if (type == HYStockChartCenterViewTypeTimeLine) {
+            if (type == CBKChartViewTypeTimeLine) {
                 self.timeLineView.timeLineGroupModel = groupTimeLineModel;
                 [self.timeLineView reDraw];
             }else{
@@ -154,11 +147,12 @@
 }
 @end
 
+
 /************************ItemModel类************************/
-@implementation HYStockChartViewItemModel
-+(instancetype)itemModelWithTitle:(NSString *)title type:(HYStockChartCenterViewType)type
+@implementation CBKChartViewItemModel
++(instancetype)itemModelWithTitle:(NSString *)title type:(CBKChartViewType)type
 {
-    HYStockChartViewItemModel *itemModel = [[HYStockChartViewItemModel alloc] init];
+    CBKChartViewItemModel *itemModel = [[CBKChartViewItemModel alloc] init];
     itemModel.title = title;
     itemModel.centerViewType = type;
     return itemModel;

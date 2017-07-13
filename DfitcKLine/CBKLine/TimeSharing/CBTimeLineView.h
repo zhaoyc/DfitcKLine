@@ -18,7 +18,7 @@
 
 @property(nonatomic,assign) BOOL isNeedDrawTime;
 
-@property(nonatomic,assign) HYStockChartCenterViewType centerViewType;
+@property(nonatomic,assign) CBKChartViewType centerViewType;
 
 /**
  *  重绘

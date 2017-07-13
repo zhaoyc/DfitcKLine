@@ -129,7 +129,6 @@ static CGFloat const CBKLineSegmentIndicatorViewWidth = 40;
 {
     self.selectedBtn = btn;
     if (self.delegate && [self.delegate respondsToSelector:@selector(cBKLineSegmentSelectedAtIndex:)]) {
-//        [self.delegate hyStockChartSegmentView:self clickSegmentButtonIndex:btn.tag-HYStockChartSegmentStartTag];
         [self.delegate cBKLineSegmentSelectedAtIndex:btn.tag-CBKLineSegmentStartTag];
     }
 }

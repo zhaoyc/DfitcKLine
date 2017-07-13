@@ -32,7 +32,7 @@
     NSAssert(self.context && self.positionModels, @"context或者positionModel不能为空!");
     NSInteger count = self.positionModels.count;
     NSArray *positionModels = self.positionModels;
-    CGContextSetLineWidth(self.context, HYStockChartTimeLineLineWidth);
+    CGContextSetLineWidth(self.context, CBKChartTimeLineLineWidth);
     CGContextSetStrokeColorWithColor(self.context, [UIColor whiteColor].CGColor);
     for (NSInteger index = 0; index < count; index++) {
         CBTimeLineTopPositionModel *positionModel = (CBTimeLineTopPositionModel *)positionModels[index];
